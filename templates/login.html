@@ -1,0 +1,19 @@
+<!-- Lucas Bubner, 2022 -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block body %}
+    <form action="/login" method="post" class="text-center py-5">
+        <p>Authorisation is required to edit this page. Please enter the Administrator password.</p>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        {% if incorrect %}
+            <p class="help-block text-danger bold">Incorrect password.</p>
+        {% endif %}
+        <button class="btn btn-primary" type="submit">Enable editing</button>
+    </form>
+{% endblock %}
