@@ -15,10 +15,16 @@
 <body>
         <nav class="bg-dark navbar navbar-dark navbar-expand-sm">
             <div class="container-fluid">
-                <a class="navbar-brand text-light" href="https://docs.google.com/document/d/1Y4qEfvXyjlDk3cWJ9kgeN8kUUEXFX8_fD6OWWe12kJM/edit?usp=sharing">LUCAS BUBNER - Year 9 English - Skill 8 - Memoir</a>
+                <a class="navbar-brand text-light" href="https://docs.google.com/document/d/1Y4qEfvXyjlDk3cWJ9kgeN8kUUEXFX8_fD6OWWe12kJM/edit?usp=sharing">
+                    {% if not logged_in %}
+                        LUCAS BUBNER - Year 9 English - Skill 8 - Memoir   
+                    {% else %}
+                        LUCAS BUBNER - Y9 Eng - Sk 8 - Memoir - EDITING MODE
+                    {% endif %}
+                </a>
                 <div class="collapse navbar-collapse justify-content-end" id="navbar">
                     <ul class="navbar-nav ms-auto me-2">
-                        {% if logged_in == True %}
+                        {% if logged_in %}
                             <li class="nav-item"><a class="nav-link" href="/logout">Disable editing</a></li>
                         {% else %}
                             <li class="nav-item"><a class="nav-link" href="/login">Enable editing</a></li>

@@ -1,5 +1,6 @@
 # Lucas Bubner, 2022
 from flask import Flask, render_template, redirect, request
+from os import environ
 
 app = Flask(__name__)
 logged_in = False
@@ -16,7 +17,7 @@ def login():
     if request.method == 'POST':
         password = request.form.get("password")
 
-        if password == "test":
+        if password == environ['password']:
             logged_in = True
             return redirect("/")
 
