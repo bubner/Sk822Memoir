@@ -1,0 +1,29 @@
+<!-- Lucas Bubner, 2022 -->
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Post
+{% endblock %}
+
+{% block body %}
+    <br>
+    <form action="/addpost" method="post">
+        <div class="form-group">
+            <label for="title"><b>Title</b></label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Title" required>
+        </div>
+        <div class="form-group">
+            <label for="content"><b>Content</b></label>
+            <textarea class="form-control" id="content" name="content" placeholder="Content" required></textarea>
+        </div>
+        <div class="form-group">
+            <label for="id"><b>Image Path (./static/images/)</b></label>
+            <input type="text" class="form-control" id="image" name="image" placeholder="Image" required>
+        </div>
+        <div class="form-group">
+            <label for="id"><b>Image Height</b></label>
+            <input type="text" class="form-control" id="imageheight" name="imageheight" placeholder="Image Height" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Post</button>
+    </form>
+{% endblock %}

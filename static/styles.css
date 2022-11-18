@@ -1,0 +1,40 @@
+/* Lucas Bubner, 2022 */
+/* Custom CSS for outside of Bootstrap */
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-image: url("./images/bg.png");
+}
+
+* {
+    font-family: 'Nanum Myeongjo', serif;
+}
+
+.post {
+    background-color: #343a40;
+    color: white;
+    border-radius: 20px;
+    padding: 24px;
+}
+
+.pfp {
+    width: 64px;
+    height: auto;
+    border-radius: 50%;
+}
+
+.pfp:hover {
+    cursor: pointer;
+}
+
+#navbar {
+    background-image: linear-gradient(to right, #ed1c24, #333, #333);
+    color: white;
+    border-radius: 20px;
+    margin: 5px;
+}
+
+#right-align {
+    float: right;
+}
