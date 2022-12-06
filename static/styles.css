@@ -1,10 +1,34 @@
 /* Lucas Bubner, 2022 */
 /* Custom CSS for outside of Bootstrap */
 
-html, body {
+html,
+body {
     height: 100%;
     width: 100%;
     background-image: url("./images/bg.png");
+    --scrollbarBG: #ababab;
+    --thumbBG: #343a40;
+}
+
+body::-webkit-scrollbar {
+    width: 11px;
+}
+
+body {
+    scrollbar-width: auto;
+    scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+    /* Fade in animation will handle the viewing of each element, if needed to be displayed */
+    display: none;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--scrollbarBG);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--thumbBG);
+    border-radius: 6px;
+    border: 3px solid var(--scrollbarBG);
 }
 
 * {
@@ -12,7 +36,8 @@ html, body {
 }
 
 .post {
-    background-color: #343a40;
+    background: rgb(52, 58, 64);
+    background: linear-gradient(150deg, rgba(52, 58, 64, 1) 0%, rgba(85, 85, 85, 1) 100%);
     color: white;
     border-radius: 20px;
     padding: 24px;
@@ -29,7 +54,10 @@ html, body {
 }
 
 #navbar {
-    background-image: linear-gradient(to right, #ed1c24, #333, #333);
+    background-image: url("./images/wires.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white;
     border-radius: 20px;
     margin: 5px;
@@ -37,4 +65,35 @@ html, body {
 
 #right-align {
     float: right;
+    padding: 12px;
+    max-width: 100%;
+}
+
+/* Prevent clipping, this is a horrendus solution but it will do. */
+@media screen and (min-width: 1500px) {
+    #right-align {
+        width: 250px;
+        height: auto;
+    }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes gen {
+    0% {
+        transform: translate(0px, 80px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
 }

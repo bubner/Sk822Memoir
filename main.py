@@ -24,7 +24,7 @@ def login_required(f):
 @app.route('/')
 def index():
     rows = posts.execute("SELECT id, title, content, img, imgheight FROM posts").fetchall()
-    print("> debug | fetching {}".format(rows))
+    print("> debug | fetched sql tables containing post information.")
     return render_template("index.html",
                            logged_in = logged_in,
                            posts = rows)
@@ -41,7 +41,7 @@ def addpost():
             request.form.get("imageheight")
         ]
         posts.execute("INSERT INTO posts(title, content, img, imgheight) VALUES(?,?,?,?)", data)
-        print("> debug | updated database with new data {}".format(data))
+        print("> debug | updating db with new data...")
         sql.commit()
         return redirect("/")
     else:
@@ -85,12 +85,12 @@ def editpost(id):
         ]
         
         posts.execute("UPDATE posts SET title = ?, content = ?, img = ?, imgheight = ? WHERE id = ?", data)
-        print("> debug | updating db with data {}".format(data))
+        print("> debug | updating db with new data...")
         sql.commit()
         return redirect("/")
     else:
-        toedit = posts.execute("SELECT id, title, content, img, imgheight FROM posts WHERE id =?", (id,)).fetchone()
-        print("> debug | fetching edits for {}".format(toedit))
+        toedit = posts.execute("SELECT id, title, content, img, imgheight FROM posts WHERE id = ?", (id,)).fetchone()
+        print("> debug | fetching edits for a post...")
         return render_template("edit.html", logged_in = logged_in, post = toedit)
 
 

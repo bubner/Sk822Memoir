@@ -18,8 +18,7 @@
 <body>
     <nav class="navbar navbar-dark navbar-expand-sm" id="navbar">
         <div class="container-fluid">
-            <img class="navbar-brand pfp" title="Goto index page" src="{{ url_for('static', filename='images/holowfv1.1.png') }}" alt="Lucas Bubner" onclick="window.location.href = '/'">
-            <a class="navbar-brand text-light" title="Goto Google Doc" href="https://docs.google.com/document/d/1Y4qEfvXyjlDk3cWJ9kgeN8kUUEXFX8_fD6OWWe12kJM/edit?usp=sharing">
+            <a class="navbar-brand text-light" title="Goto Google Doc" href="https://docs.google.com/document/d/198r6ryZy7vMOaUzWbVPKB3y4SbnQ3QEKcZdBbcUo7Ck/edit?usp=sharing">
                 <b>
                 {% if not logged_in %}
                     LUCAS BUBNER - Year 9 English - Skill 8 - Memoir   
@@ -29,7 +28,7 @@
                 </b>
             </a>
             <div class="collapse navbar-collapse justify-content-end" id="navbar" style="background-image: revert;">
-                <ul class="navbar-nav ms-auto me-2">
+                <ul class="navbar-nav text-light ms-auto me-2">
                     {% if logged_in %}
                         <li class="nav-item"><a class="nav-link" href="/addpost"><b>Add post</b></a></li>
                         <li class="nav-item"><a class="nav-link" href="/logout"><b>Disable editing</b></a></li>
@@ -46,5 +45,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="{{ url_for('static', filename='anim.js') }}" defer></script>
 </body>
 </html>
